@@ -1,7 +1,7 @@
 const ListMark = function(options = { listStyle: 'none', activeOrder: 0 }) {
   this.currentOrder = 0;
-  this.listStyle = options.listStyle;
-  this.activeOrder = options.activeOrder;
+  this.listStyle = options.listStyle || 'none';
+  this.activeOrder = options.activeOrder || 0;
 };
 
 ListMark.prototype.setActiveOrder = function(activeOrder) {

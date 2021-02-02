@@ -5,24 +5,6 @@ const printer = new Printer();
 const out = process.stdout;
 const ListMark = require('./utils/listMark');
 
-const getChar = function(a) {
-  const read = process.stdin;
-  read.setEncoding('utf8');
-  return new Promise((res) => {
-    let readChar = (chunk) => {
-      read.off('data', readChar);
-      if (chunk === '\u000D') {
-        process.stdout.moveCursor(0, -1);
-        process.stdout.clearLine();
-      }
-      process.stdout.cursorTo(0);
-      process.stdout.clearLine();
-      return res(chunk);
-    };
-    read.on('data', readChar);
-  });
-};
-
 const question = function(ques) {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -42,11 +24,33 @@ const select = async function(
   question,
   choices,
   options = {
-    listStyle: 'none',
+    listStyle: 'circle',
   },
 ) {
   let currentIndex = 0;
   let listMark = new ListMark({ listStyle: options.listStyle, currentIndex });
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+  const getChar = function(a) {
+    const read = process.stdin;
+    read.setEncoding('utf8');
+    return new Promise((res) => {
+      let readChar = (chunk) => {
+        read.off('data', readChar);
+        if (chunk === '\u000D') {
+          process.stdout.moveCursor(0, -1);
+          process.stdout.clearLine();
+        }
+        process.stdout.cursorTo(0);
+        process.stdout.clearLine();
+        return res(chunk);
+      };
+      read.on('data', readChar);
+    });
+  };
+
   choices = choices.map((choice) => {
     if (typeof choice === 'string') {
       return {
@@ -117,6 +121,7 @@ const select = async function(
     process.stdout.moveCursor(0, -1);
     process.stdout.clearLine();
   }
+  rl.close();
   return choices[currentIndex].value;
 };
 

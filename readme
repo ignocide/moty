@@ -1,0 +1,84 @@
+# moty  
+
+terminal 환경에서 색상표현, 문답을 쉽게 하게한다.
+
+# useage  
+
+## printer  
+
+set color in terminal
+
+```
+const Printer = require('moty').Printer;  
+const printer = new Printer();  
+printer.setColor('red');  
+console.log('this text will be printed red');  
+printer.reset();  
+```
+
+### supported text  
+
+```
+const COLOR = {
+  BLACK: 'black',
+  RED: 'red',
+  GREEN: 'green',
+  YELLOW: 'yellow',
+  BLUE: 'blue',
+  MAGENTA: 'magenta',
+  CYAN: 'cyan',
+  WHITE: 'white',
+  BRIGHT_BLACK: 'bright_black',
+  BRIGHT_RED: 'bright_red',
+  BRIGHT_GREEN: 'bright_green',
+  BRIGHT_YELLOW: 'bright_yellow',
+  BRIGHT_BLUE: 'bright_blue',
+  BRIGHT_MAGENTA: 'bright_magenta',
+  BRIGHT_CYAN: 'bright_cyan',
+  BRIGHT_WHITE: 'bright_white',
+};
+
+```
+
+## select  
+
+```
+const moty = require('moty').dialog;  
+
+const choies = ['first','second'];  
+const choies = [
+  {
+    label: 'first',
+    value: 1
+  },
+  {
+    label : 'second',
+    value: 2
+  }
+];  
+
+const aws = await dialog.select('선택', choies, {
+  listStyle: 'circle' //default (circle, rect, number, none)
+});  
+
+//value will be retrun
+
+```
+
+
+## question  
+
+```
+const dialog = require('moty').dialog;  
+
+const aws =  await dialog.question('what shell I do?');  
+```
+
+
+## clear
+
+
+```
+const tty = require('moty').tty;  
+tty.clear();
+```

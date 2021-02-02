@@ -1,6 +1,6 @@
 {
   "name": "moty",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "./src/index.js",
   "license": "MIT",
   "scripts": {
@@ -11,12 +11,8 @@
   },
   "jest": {
     "testRegex": "./test/.*.js$",
-    "moduleFileExtensions": [
-      "js"
-    ],
+    "moduleFileExtensions": [ "js" ],
     "collectCoverage": true,
-    "collectCoverageFrom": [
-      "./src/**/*.js$"
-    ]
+    "collectCoverageFrom": [ "./src/**/*.js$" ]
   }
 }
