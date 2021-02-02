@@ -5,12 +5,6 @@ const printer = new Printer();
 const out = process.stdout;
 const ListMark = require('./utils/listMark');
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  prompt: '',
-});
-
 const getChar = function(a) {
   const read = process.stdin;
   read.setEncoding('utf8');
