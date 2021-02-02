@@ -12,18 +12,17 @@ const COLOR = {
   GREEN: 'green',
   YELLOW: 'yellow',
   BLUE: 'blue',
-  MAGENTA: "magenta",
+  MAGENTA: 'magenta',
   CYAN: 'cyan',
-  WHITE: "white",
-  BRIGHT_BLACK: "bright_black",
-  BRIGHT_RED: "bright_red",
-  BRIGHT_GREEN: "bright_green",
+  WHITE: 'white',
+  BRIGHT_BLACK: 'bright_black',
+  BRIGHT_RED: 'bright_red',
+  BRIGHT_GREEN: 'bright_green',
   BRIGHT_YELLOW: 'bright_yellow',
-  BRIGHT_BLUE: "bright_blue",
-  BRIGHT_MAGENTA: "bright_magenta",
+  BRIGHT_BLUE: 'bright_blue',
+  BRIGHT_MAGENTA: 'bright_magenta',
   BRIGHT_CYAN: 'bright_cyan',
-  BRIGHT_WHITE: "bright_white"
-}
-
+  BRIGHT_WHITE: 'bright_white',
+};
 
 module.exports = COLOR;
